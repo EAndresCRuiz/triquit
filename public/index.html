@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Torneo Gato (Tic Tac Toe)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🏆 Torneo de Gato</h1>
+      <p class="subtitle">Multijugador en tiempo real</p>
+    </header>
+
+    <section class="panel">
+      <div class="card">
+        <label>Tu nombre</label>
+        <input id="nameInput" placeholder="Escribe tu nombre" />
+        <button id="registerBtn" class="primary">Entrar al lobby</button>
+        <div class="inline">
+          <button id="startBtn" class="accent">Iniciar torneo</button>
+          <span id="playersCount" class="pill">Jugadores: 0</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Lobby</h2>
+        <ul id="playersList" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Llaves (Ronda <span id="roundNum">–</span>)</h2>
+        <div id="pairings" class="grid-pairings"></div>
+      </div>
+
+      
+      <div class="card">
+        <h2>Marcador</h2>
+        <ul id="scoreboard" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Resultados recientes</h2>
+        <ul id="results" class="list"></ul>
+      </div>
+
+    </section>
+
+    <section class="board-section">
+      <div class="card board-card">
+        <div class="board-header">
+          <h2>Partido actual</h2>
+          <div id="matchInfo" class="muted"></div>
+        </div>
+        <div id="board" class="board">
+          <!-- celdas -->
+          <div class="cell" data-idx="0"></div>
+          <div class="cell" data-idx="1"></div>
+          <div class="cell" data-idx="2"></div>
+          <div class="cell" data-idx="3"></div>
+          <div class="cell" data-idx="4"></div>
+          <div class="cell" data-idx="5"></div>
+          <div class="cell" data-idx="6"></div>
+          <div class="cell" data-idx="7"></div>
+          <div class="cell" data-idx="8"></div>
+        </div>
+        <div id="status" class="status"></div>
+      </div>
+    </section>
+  </div>
+
+  
+<!-- Carga el cliente desde tu propio servidor -->
+<script src="/socket.io/socket.io.js"></script>
+
+  <script src="client.js"></script>
+</body>
+</html>

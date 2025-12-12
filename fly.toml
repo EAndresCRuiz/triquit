@@ -1,0 +1,15 @@
+
+app = "tictactoe-tournament-app"
+primary_region = "bog"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_start_machines = true
+  auto_stop_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "connections"
+    soft_limit = 200
+    hard_limit = 250
